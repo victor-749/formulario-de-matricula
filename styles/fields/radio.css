@@ -10,7 +10,8 @@ label + .radio-wrapper {
 }
 
 .radio-inner {
-  border: 1px solid var(--stroke-default);
+  border: 2px solid transparent;
+  outline: 1px solid var(--stroke-default);
   border-radius: .5rem;
 
   display: grid;
@@ -42,7 +43,8 @@ label + .radio-wrapper {
   &:hover, &:focus-within {
     transition: ease-in-out 200ms;
 
-    border: 1px solid var(--stroke-highlight);
+    outline-width: 0;
+    border-color: var(--stroke-highlight);
     
     & .radio-image {
       background-image: url(../../assets/icons/radio-hover.svg);
