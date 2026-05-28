@@ -8,7 +8,7 @@ fieldset {
   border: none;
 
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 legend {
@@ -24,4 +24,18 @@ fieldset + fieldset{
   margin-top: 3rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
+}
+
+@media (width < 80em) {
+  .actions-wrapper {
+    flex-flow: row wrap;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+ 
 }

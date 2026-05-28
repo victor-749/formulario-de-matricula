@@ -1,19 +1,47 @@
-#app {
-  display: grid;
-  grid-template-columns: 51.25% 48.75%;
 
-  height: 100vh;
-  overflow: hidden;
+
+@media (width >= 80em) {
+  main .main-container {
+    max-width: 33rem;
+    margin-left: auto;
+  }
+  
+   #app {
+    display: grid;
+    grid-template-columns: 51.25% 48.75%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #mobile-only {
+    display: none;
+  }
+
+}
+
+#mobile-only {
+  & header {
+    padding-inline: 2rem;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+
+    background-color: var(--surface-secondary);
+
+    & img:nth-child(1) {
+      padding-block: 1.5rem .75rem;
+    }
+
+    & img:nth-child(2) {
+      padding-bottom: 2rem;
+    }
+  }
 }
 
 main {
   overflow: auto;
   padding: 4rem;
 
-  & .main-container {
-    max-width: 33rem;
-    margin-left: auto;
-  }
 
   & .back {
     display: flex;
@@ -29,17 +57,19 @@ main {
 
 }
 
-aside {
-  padding: 4rem;
-  background-color: var(--surface-secondary);
+@media (width >= 80em) {
 
-  & .aside-container {
+  aside .aside-container {
     max-width: 31rem;
 
-    & > img {
+    aside > img {
       margin-top: 2rem;
     }
   }
+}
+aside { 
+  padding: 4rem;
+  background-color: var(--surface-secondary);
 
   & h2 {
     font: 600 2.5rem/1.25 var(--font-family);
@@ -50,4 +80,27 @@ aside {
     color: var(--text-highlight);
   }
 
+}
+@media (width < 80em) {
+  aside {
+    display: none;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  .flex {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .flex-1 {
+    flex: auto;
+    width: 100%;
+  }
+  .flex-2 {
+    flex: auto;
+    width: 100%;
+  }
 }
